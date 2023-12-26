@@ -49,10 +49,6 @@ public class SaleService {
         List<SaleSellerMinProjection> result = repository.summary(initialDate, finalDate);
         List<SaleSellerMinDTO> dto = result.stream().map(x -> new SaleSellerMinDTO(x.getName(), x.getTotal()))
                 .collect(Collectors.toList());
-
-        for (SaleSellerMinDTO obj: dto){
-            System.out.println(obj);
-        }
         return dto;
     }
 }
